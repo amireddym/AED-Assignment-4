@@ -48,7 +48,7 @@ public class DataInitializer {
         Encounter jPPerson2Encounter2 = new Encounter(vsJPPerson2visit2,new Date(),new Date(),"System","System");
         Encounter jPPerson2Encounter3 = new Encounter(vsJPPerson2visit3,new Date(),new Date(),"System","System");
 
-        List<Encounter> jPPerson2Encounters = new ArrayList<Encounter>();
+        List<Encounter> jPPerson2Encounters = new ArrayList<>();
         jPPerson2Encounters.add(jPPerson2Encounter1);
         jPPerson2Encounters.add(jPPerson2Encounter2);
         jPPerson2Encounters.add(jPPerson2Encounter3);
@@ -61,33 +61,50 @@ public class DataInitializer {
         house1Persons.add(jPPerson1);
         house1Persons.add(jPPerson2);
         
+        //MissionHill
+        //Person1
+        VitalSigns vsMHPerson1visit1 = new VitalSigns(55.20,86.5,70.6,5.10,38.8,95,19,97.50,new Date(),new Date(),"System","System");
+        Encounter vsPerson1Encounter1 = new Encounter(vsMHPerson1visit1,new Date(),new Date(),"System","System");
+
+        //Person2
+        VitalSigns vsMHPerson2visit1 = new VitalSigns(65.20,90.5,74.6,5.70,39.8,94,19,95.58,new Date(),new Date(),"System","System");
+        Encounter vsPerson2Encounter1 = new Encounter(vsMHPerson2visit1,new Date(),new Date(),"System","System");
+        
+        List<Encounter> vsPerson1Encounters = new ArrayList<>();
+        vsPerson1Encounters.add(vsPerson1Encounter1);
+        
+        List<Encounter> vsPerson2Encounters = new ArrayList<>();
+        vsPerson2Encounters.add(vsPerson2Encounter1);
+        
+        EncounterHistory vsPerson1encounterHistory = new EncounterHistory(vsPerson1Encounters,new Date(),new Date(),"System","System");
+        EncounterHistory vsPerson2encounterHistory = new EncounterHistory(vsPerson2Encounters,new Date(),new Date(),"System","System");
+  
+        Patient vsPatient1 = new Patient(vsPerson1encounterHistory,new Date(),new Date(),"System","System");
+        Person vsPerson1 = new Person("Ramanathan",23.5,Gender.Male,vsPatient1,new Date(),new Date(),"System","System");
+
+        Patient vsPatient2 = new Patient(vsPerson2encounterHistory,new Date(),new Date(),"System","System");
+        Person vsPerson2 = new Person("Sachin",23.5,Gender.Male,vsPatient2,new Date(),new Date(),"System","System"); 
+        
+        
+        List<Person> house2Persons = new ArrayList<>();
+        house2Persons.add(vsPerson1);
+        house2Persons.add(vsPerson2);
+        
         House jPHouse1 = new House("50 EvergreenST",house1Persons,new Date(),new Date(),"System","System");
         List<House> jphouses = new ArrayList<>();
         jphouses.add(jPHouse1);
         
+        House mhHouse1 = new House("180 HillsideST",house2Persons,new Date(),new Date(),"System","System");
+        List<House> mhhouses = new ArrayList<>();
+        mhhouses.add(mhHouse1);
+        
         Community jpCommunity = new Community("Jamaica Plain",jphouses, new Date(),new Date(),"System","System");
+        Community mhCommunity = new Community("Mission Hill", mhhouses, new Date(),new Date(),"System","System");
         List<Community> jpCommunities = new ArrayList<>();
         jpCommunities.add(jpCommunity);
+        jpCommunities.add(mhCommunity);
         
         City bostonCity = new City(CityName.Boston, jpCommunities,  new Date(),new Date(),"System","System");
-        
-        //MissionHill
-        //Person1
-        VitalSigns vsMHPerson1visit1 = new VitalSigns(55.20,86.5,70.6,5.10,38.8,95,19,97.50,new Date(),new Date(),"System","System");
-        VitalSigns vsMHPerson1visit2 = new VitalSigns(56.45,87.5,77.6,6.00,37.7,96,19,98.50,new Date(),new Date(),"System","System");
-        VitalSigns vsMHPerson1visit3 = new VitalSigns(57.21,89.5,75.6,6.00,39.5,97,19,99.50,new Date(),new Date(),"System","System");
-
-        //Person2
-        VitalSigns vsMHPerson2visit1 = new VitalSigns(65.20,90.5,74.6,5.70,39.8,94,19,95.58,new Date(),new Date(),"System","System");
-        VitalSigns vsMHPerson2visit2 = new VitalSigns(64.60,95.5,68.9,5.70,40.5,93,20,97.78,new Date(),new Date(),"System","System");
-
-        //Roxubory
-        //Person1
-        VitalSigns vsRBPerson1visit1 = new VitalSigns(46.20,83.5,70.4,5.10,38.8,95,19,99.50,new Date(),new Date(),"System","System");
-        VitalSigns vsRBPerson1visit2 = new VitalSigns(48.45,83.5,56.6,5.10,38.7,96,19,98.50,new Date(),new Date(),"System","System");
-        
-        //Person2
-        VitalSigns vsRBPerson2visit1 = new VitalSigns(55.20,86.5,59.6,5.10,38.8,95,19,97.50,new Date(),new Date(),"System","System");
         
         List<City> cities = new ArrayList<>();
         cities.add(bostonCity);
@@ -96,11 +113,15 @@ public class DataInitializer {
         List<Person> parentsList = new ArrayList<>();
         parentsList.add(jPPerson1);
         parentsList.add(jPPerson2);
+        parentsList.add(vsPerson1);
+        parentsList.add(vsPerson2);
         PersonDirectory personDirectory = new PersonDirectory(parentsList,new Date(),new Date(),"System","System");
         
         List<Patient> patientsList = new ArrayList<>();
         patientsList.add(jPPatient1);
         patientsList.add(jPPatient2);
+        patientsList.add(vsPatient1);
+        patientsList.add(vsPatient2);
         PatientDirectory patientDirectory = new PatientDirectory(patientsList,new Date(),new Date(),"System","System");
         System system = new System(cities, personDirectory, patientDirectory, new Date(),new Date(),"System","System");
         
