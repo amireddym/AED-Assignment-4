@@ -85,9 +85,7 @@ public class TrackJPanel extends javax.swing.JPanel {
         
         DefaultTableModel model = (DefaultTableModel) personsjTable.getModel();
         model.setRowCount(0);
-    }
-    
-    
+    }   
        
     /**
      * This method is called from within the constructor to initialize the form.
@@ -106,8 +104,6 @@ public class TrackJPanel extends javax.swing.JPanel {
         searchjButton = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         personsjTable = new javax.swing.JTable();
-        onlyLatestjCheckBox = new javax.swing.JCheckBox();
-        onlyLatestjLabel = new javax.swing.JLabel();
 
         headerjLabel.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         headerjLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -156,9 +152,6 @@ public class TrackJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(personsjTable);
 
-        onlyLatestjLabel.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
-        onlyLatestjLabel.setText("Only Latest");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -179,11 +172,7 @@ public class TrackJPanel extends javax.swing.JPanel {
                                 .addComponent(communityjLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(communityjComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(onlyLatestjLabel)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(onlyLatestjCheckBox)
-                                .addGap(29, 29, 29)
+                                .addGap(170, 170, 170)
                                 .addComponent(searchjButton))
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 665, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(69, Short.MAX_VALUE))
@@ -194,15 +183,12 @@ public class TrackJPanel extends javax.swing.JPanel {
                 .addGap(33, 33, 33)
                 .addComponent(headerjLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(onlyLatestjCheckBox)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(cityjLabel)
-                        .addComponent(cityjComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(communityjLabel)
-                        .addComponent(communityjComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(searchjButton)
-                        .addComponent(onlyLatestjLabel)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cityjLabel)
+                    .addComponent(cityjComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(communityjLabel)
+                    .addComponent(communityjComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(searchjButton))
                 .addGap(45, 45, 45)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(160, Short.MAX_VALUE))
@@ -211,7 +197,7 @@ public class TrackJPanel extends javax.swing.JPanel {
 
     private void searchjButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchjButtonActionPerformed
         // TODO add your handling code here:
-        boolean isOnlyLatest = onlyLatestjCheckBox.isSelected();
+        boolean isOnlyLatest = true;
         String cityName = (String) cityjComboBox.getSelectedItem();
         if(communityjComboBox.getItemCount()==0){
             DefaultTableModel model = (DefaultTableModel) personsjTable.getModel();
@@ -232,6 +218,7 @@ public class TrackJPanel extends javax.swing.JPanel {
                        }else{
                            displayPatients(community, false);
                        }
+                       return;
                     }
                 }
             }
@@ -284,8 +271,6 @@ public class TrackJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel communityjLabel;
     private javax.swing.JLabel headerjLabel;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JCheckBox onlyLatestjCheckBox;
-    private javax.swing.JLabel onlyLatestjLabel;
     private javax.swing.JTable personsjTable;
     private javax.swing.JButton searchjButton;
     // End of variables declaration//GEN-END:variables

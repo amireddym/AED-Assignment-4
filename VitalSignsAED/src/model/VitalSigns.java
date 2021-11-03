@@ -11,7 +11,7 @@ import java.util.Date;
  *
  * @author manojreddy
  */
-public class VitalSigns extends ModificationInfo{
+public class VitalSigns extends ModificationInfo implements Comparable<VitalSigns>{
     
     private double weight;
     
@@ -108,6 +108,11 @@ public class VitalSigns extends ModificationInfo{
     @Override
     public String toString() {
         return  String.valueOf(weight);
+    }
+
+    @Override
+    public int compareTo(VitalSigns o) {
+        return o.getLastUpdatedDate().compareTo(getLastUpdatedDate());
     }
     
 }

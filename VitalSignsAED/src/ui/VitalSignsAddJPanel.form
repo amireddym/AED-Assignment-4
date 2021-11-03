@@ -16,7 +16,7 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
+          <Group type="102" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
@@ -25,59 +25,44 @@
                       <Component id="addVitalSignsJLabel" min="-2" pref="268" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="257" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="117" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="bloodPressureDsJLabel" min="-2" max="-2" attributes="0"/>
+                                  <Component id="bloodPressureSyJLabel" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="weightJLabel" min="-2" pref="140" max="-2" attributes="0"/>
+                                  <Component id="heightJLabel" alignment="1" min="-2" pref="133" max="-2" attributes="0"/>
+                                  <Component id="bodyTemperatureJLabel" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="pulseRateJLabel" alignment="1" min="-2" pref="133" max="-2" attributes="0"/>
+                                  <Component id="respirationRateJLabel" alignment="1" min="-2" pref="133" max="-2" attributes="0"/>
+                                  <Component id="oxygenSaturationJLabel" alignment="1" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                      </Group>
+                      <EmptySpace min="-2" pref="82" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="bloodPressureSysJTextField" alignment="0" min="-2" pref="135" max="-2" attributes="0"/>
+                          <Component id="weightJTextField" alignment="0" min="-2" pref="135" max="-2" attributes="0"/>
+                          <Component id="bloodPressureDsJTextField" min="-2" pref="135" max="-2" attributes="0"/>
+                          <Component id="heightJTextField" min="-2" pref="135" max="-2" attributes="0"/>
+                          <Component id="bodyTemperatureJTextField" min="-2" pref="135" max="-2" attributes="0"/>
+                          <Component id="pulseRateJTextField" min="-2" pref="135" max="-2" attributes="0"/>
+                          <Component id="respirationRateJTextField" min="-2" pref="135" max="-2" attributes="0"/>
+                          <Component id="oxygenSaturationJTextField" min="-2" pref="135" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="259" max="-2" attributes="0"/>
                       <Component id="addJButton" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                      <Group type="102" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="heightJLabel" alignment="0" min="-2" pref="133" max="-2" attributes="0"/>
-                                      <Component id="pulseRateJLabel" alignment="0" min="-2" pref="133" max="-2" attributes="0"/>
-                                      <Component id="respirationRateJLabel" alignment="0" min="-2" pref="133" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
-                                  <Component id="bodyTemperatureJLabel" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Component id="oxygenSaturationJLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace min="-2" pref="82" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="bodyTemperatureJTextField" alignment="0" min="-2" pref="135" max="-2" attributes="0"/>
-                              <Component id="heightJTextField" alignment="0" min="-2" pref="135" max="-2" attributes="0"/>
-                              <Component id="pulseRateJTextField" alignment="0" min="-2" pref="135" max="-2" attributes="0"/>
-                              <Component id="respirationRateJTextField" alignment="0" min="-2" pref="135" max="-2" attributes="0"/>
-                              <Component id="oxygenSaturationJTextField" alignment="0" min="-2" pref="135" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <Group type="102" attributes="0">
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <EmptySpace min="-2" pref="119" max="-2" attributes="0"/>
-                                  <Component id="weightJLabel" min="-2" pref="140" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="117" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="bloodPressureDsJLabel" min="-2" max="-2" attributes="0"/>
-                                      <Component id="bloodPressureSyJLabel" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                          </Group>
-                          <EmptySpace min="-2" pref="82" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="bloodPressureSysJTextField" alignment="0" min="-2" pref="135" max="-2" attributes="0"/>
-                              <Component id="weightJTextField" alignment="0" min="-2" pref="135" max="-2" attributes="0"/>
-                              <Component id="bloodPressureDsJTextField" min="-2" pref="135" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                  </Group>
               </Group>
-              <EmptySpace pref="255" max="32767" attributes="0"/>
+              <EmptySpace pref="258" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -104,20 +89,20 @@
                   <Component id="bloodPressureDsJLabel" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
                   <Component id="bloodPressureDsJTextField" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="21" max="32767" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="heightJLabel" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
                   <Component id="heightJTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="heightJLabel" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="bodyTemperatureJLabel" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
                   <Component id="bodyTemperatureJTextField" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="pulseRateJLabel" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
                   <Component id="pulseRateJTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="pulseRateJLabel" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -131,7 +116,7 @@
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="addJButton" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+              <EmptySpace pref="88" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -194,6 +179,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="bodyTemperatureJTextField">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bodyTemperatureJTextFieldActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="backJButton">
       <Properties>
