@@ -55,6 +55,7 @@ public class TrackJPanel extends javax.swing.JPanel {
                 }
             }
         });
+        searchjButtonActionPerformed(null);
     }
     
     private void initializeData() {
@@ -82,6 +83,8 @@ public class TrackJPanel extends javax.swing.JPanel {
         
         communityjComboBox.setSelectedIndex(0);
         
+        DefaultTableModel model = (DefaultTableModel) personsjTable.getModel();
+        model.setRowCount(0);
     }
     
     
@@ -211,6 +214,8 @@ public class TrackJPanel extends javax.swing.JPanel {
         boolean isOnlyLatest = onlyLatestjCheckBox.isSelected();
         String cityName = (String) cityjComboBox.getSelectedItem();
         if(communityjComboBox.getItemCount()==0){
+            DefaultTableModel model = (DefaultTableModel) personsjTable.getModel();
+            model.setRowCount(0);
             JOptionPane.showMessageDialog(this, "No Communities to show People");
             return;
         }

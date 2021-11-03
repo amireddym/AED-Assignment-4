@@ -53,14 +53,14 @@ public class EncounterHistoryJPanel extends javax.swing.JPanel {
 
                         Object[] row = new Object[9];
                         row[0]=encounter.getVitalSigns();
-                        row[1]=encounter.getVitalSigns().getBloodPressure();
-                        row[2]=encounter.getVitalSigns().getHeight();
-                        row[3]=encounter.getVitalSigns().getBodyTemperate();
-                        row[4]=encounter.getVitalSigns().getPulseRate();
-                        row[5]=encounter.getVitalSigns().getRespirationRate();
-                        row[6]=encounter.getVitalSigns().getOxygenSaturation();
-                        row[7]=formatDate(encounter.getVitalSigns().getCreatedDate());
-                        row[8]=encounter.getVitalSigns().getCreatedBy();
+                        row[1]=encounter.getVitalSigns().getSysBloodPressure();
+                        row[2]=encounter.getVitalSigns().getDiaBloodPressure();
+                        row[3]=encounter.getVitalSigns().getHeight();
+                        row[4]=encounter.getVitalSigns().getBodyTemperate();
+                        row[5]=encounter.getVitalSigns().getPulseRate();
+                        row[6]=encounter.getVitalSigns().getRespirationRate();
+                        row[7]=encounter.getVitalSigns().getOxygenSaturation();
+                        row[8]=formatDate(encounter.getVitalSigns().getCreatedDate());
 
                         model.addRow(row);
                     }
@@ -101,11 +101,11 @@ public class EncounterHistoryJPanel extends javax.swing.JPanel {
                 {null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Weight", "Blood Pressure", "Height", "Body Temperature", "Pulse Rate", "Respiration Rate", "Oxygen Saturation", "Created On", "Created By"
+                "Weight", "Blood Pressure(Sys)", "Blood Pressure(Ds)", "Height", "Body Temperature", "Pulse Rate", "Respiration Rate", "Oxygen Saturation", "Created On"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Object.class, java.lang.Double.class, java.lang.Double.class, java.lang.Double.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Double.class, java.lang.String.class, java.lang.String.class
+                java.lang.Object.class, java.lang.Double.class, java.lang.String.class, java.lang.Double.class, java.lang.Double.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Double.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
                 false, false, false, false, false, false, false, false, false

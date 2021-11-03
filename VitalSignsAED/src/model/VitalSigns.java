@@ -15,7 +15,9 @@ public class VitalSigns extends ModificationInfo{
     
     private double weight;
     
-    private double bloodPressure;
+    private double sysBloodPressure;
+    
+    private double diaBloodPressure;
     
     private double height;
     
@@ -27,10 +29,11 @@ public class VitalSigns extends ModificationInfo{
     
     private double oxygenSaturation;
 
-    public VitalSigns(double weight, double bloodPressure, double height, double bodyTemperate, int pulseRate, int respirationRate, double oxygenSaturation, Date createdDate, Date lastUpdatedDate, String createdBy, String modifiedBy) {
+    public VitalSigns(double weight, double sysBloodPressure, double diaBloodPressure, double height, double bodyTemperate, int pulseRate, int respirationRate, double oxygenSaturation, Date createdDate, Date lastUpdatedDate, String createdBy, String modifiedBy) {
         super(createdDate, lastUpdatedDate, createdBy, modifiedBy);
         this.weight = weight;
-        this.bloodPressure = bloodPressure;
+        this.sysBloodPressure = sysBloodPressure;
+        this.diaBloodPressure = diaBloodPressure;
         this.height = height;
         this.bodyTemperate = bodyTemperate;
         this.pulseRate = pulseRate;
@@ -46,12 +49,20 @@ public class VitalSigns extends ModificationInfo{
         this.weight = weight;
     }
 
-    public double getBloodPressure() {
-        return bloodPressure;
+    public double getSysBloodPressure() {
+        return sysBloodPressure;
     }
 
-    public void setBloodPressure(double bloodPressure) {
-        this.bloodPressure = bloodPressure;
+    public void setSysBloodPressure(double sysBloodPressure) {
+        this.sysBloodPressure = sysBloodPressure;
+    }
+
+    public double getDiaBloodPressure() {
+        return diaBloodPressure;
+    }
+
+    public void setDiaBloodPressure(double diaBloodPressure) {
+        this.diaBloodPressure = diaBloodPressure;
     }
 
     public double getHeight() {

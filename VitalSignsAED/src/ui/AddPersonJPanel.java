@@ -141,9 +141,9 @@ public class AddPersonJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(genderjLabel)
                     .addComponent(genderjComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(addjButton)
-                .addGap(58, 58, 58))
+                .addContainerGap(70, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -181,6 +181,7 @@ public class AddPersonJPanel extends javax.swing.JPanel {
         
         namejTextField.setText("");
         agejTextField.setText("");
+        genderjComboBox.setSelectedItem(Gender.Male.name());
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
