@@ -156,13 +156,36 @@ public class ViewPersonJPanel extends javax.swing.JPanel {
     private void updatejButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updatejButtonActionPerformed
         // TODO add your handling code here:
         
-        person.setName(namejTextField.getText());
-        person.setAge(Double.valueOf(agejTextField.getText()));
-        person.setGender(Gender.valueOf((String)genderjComboBox.getSelectedItem()));
-        person.setLastUpdatedDate(new Date());
-        JOptionPane.showMessageDialog(this, "Successfully updated Person Details");
+        if(isDataValid()){
+            person.setName(namejTextField.getText());
+            person.setAge(Double.valueOf(agejTextField.getText()));
+            person.setGender(Gender.valueOf((String)genderjComboBox.getSelectedItem()));
+            person.setLastUpdatedDate(new Date());
+            JOptionPane.showMessageDialog(this, "Successfully updated Person Details");
+        }
     }//GEN-LAST:event_updatejButtonActionPerformed
 
+    private boolean isDataValid() {
+        
+        boolean valid = true;
+        if(!namejTextField.getText().matches("^[a-zA-Z ]+$")){
+            valid=false;
+            JOptionPane.showMessageDialog(this, "Please check Name dataType");
+        }
+        
+        try{
+            double age = Double.valueOf(agejTextField.getText());
+            if(age<0) {
+                valid =false;
+                JOptionPane.showMessageDialog(this, "Age cannot be negative");
+            }
+        }catch(Exception e) {
+            valid = false;
+            JOptionPane.showMessageDialog(this, "Please check Age dataType");
+        }
+        return valid;
+    }    
+    
     private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
         // TODO add your handling code here:
         displayJPanel.remove(this);

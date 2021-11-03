@@ -112,16 +112,19 @@ public class AddHouseJPanel extends javax.swing.JPanel {
 
     private void addJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addJButtonActionPerformed
         // TODO add your handling code here:
-
-        House house = new House(houseNameJTextField.getText(), null, new Date(), new Date(), "System", "System");
-        if(community.getHouses()==null){
-            community.setHouses(new ArrayList<>());
-            community.getHouses().add(house);
+        if(houseNameJTextField.getText().matches("^[a-zA-Z ]+$")){
+            House house = new House(houseNameJTextField.getText(), null, new Date(), new Date(), "System", "System");
+            if(community.getHouses()==null){
+                community.setHouses(new ArrayList<>());
+                community.getHouses().add(house);
+            }else{
+                community.getHouses().add(house);
+            }
+            JOptionPane.showMessageDialog(this, "Successfully Saved");
+            houseNameJTextField.setText("");
         }else{
-            community.getHouses().add(house);
+            JOptionPane.showMessageDialog(this, "Not Saved. Please check DataType");
         }
-        JOptionPane.showMessageDialog(this, "Successfully Saved");
-        houseNameJTextField.setText("");
     }//GEN-LAST:event_addJButtonActionPerformed
 
     private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed

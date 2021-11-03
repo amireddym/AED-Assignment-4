@@ -111,15 +111,19 @@ public class AddCommunityJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
         
         String communityName = communityNameJTextField.getText();
-        Community community = new Community(communityName,null,new Date(), new Date(), "System", "System");
-        if(city.getCommunities()==null){
-            city.setCommunities(new ArrayList<>());
-            city.getCommunities().add(community);
+        if(communityName.matches("^[a-zA-Z ]+$")){
+            Community community = new Community(communityName,null,new Date(), new Date(), "System", "System");
+            if(city.getCommunities()==null){
+                city.setCommunities(new ArrayList<>());
+                city.getCommunities().add(community);
+            }else{
+                city.getCommunities().add(community);
+            }
+            JOptionPane.showMessageDialog(this, "Successfully Saved");
+            communityNameJTextField.setText("");
         }else{
-            city.getCommunities().add(community);
+            JOptionPane.showMessageDialog(this, "Not Saved. Please check the proper Type");
         }
-        JOptionPane.showMessageDialog(this, "Successfully Saved");
-        communityNameJTextField.setText("");
     }//GEN-LAST:event_addJButtonActionPerformed
 
     private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed

@@ -114,11 +114,14 @@ public class ViewCommunityJPanel extends javax.swing.JPanel {
 
     private void updateJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateJButtonActionPerformed
         // TODO add your handling code here:
-
-        community.setCommunityName(communityNameJTextField.getText());
-        community.setLastUpdatedDate(new Date());
-        JOptionPane.showMessageDialog(this, "Successfully Saved");
-        communityNameJTextField.setText("");
+        if(communityNameJTextField.getText().matches("^[a-zA-Z ]+$")){
+            community.setCommunityName(communityNameJTextField.getText());
+            community.setLastUpdatedDate(new Date());
+            JOptionPane.showMessageDialog(this, "Successfully Saved");
+            communityNameJTextField.setText("");
+        }else {
+           JOptionPane.showMessageDialog(this, ""); 
+        }
     }//GEN-LAST:event_updateJButtonActionPerformed
 
     private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed

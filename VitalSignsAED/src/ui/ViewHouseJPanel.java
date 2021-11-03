@@ -114,11 +114,14 @@ public class ViewHouseJPanel extends javax.swing.JPanel {
 
     private void updateJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateJButtonActionPerformed
         // TODO add your handling code here:
-
-        house.setHouseName(houseNameJTextField.getText());
-        house.setLastUpdatedDate(new Date());
-        JOptionPane.showMessageDialog(this, "Successfully Saved");
-        houseNameJTextField.setText("");
+        if(houseNameJTextField.getText().matches("^[a-zA-Z ]+$")) {
+            house.setHouseName(houseNameJTextField.getText());
+            house.setLastUpdatedDate(new Date());
+            JOptionPane.showMessageDialog(this, "Successfully Saved");
+            houseNameJTextField.setText("");
+        }else {
+            JOptionPane.showMessageDialog(this, "Not Saved. Please check DataType");
+        }
     }//GEN-LAST:event_updateJButtonActionPerformed
 
     private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed

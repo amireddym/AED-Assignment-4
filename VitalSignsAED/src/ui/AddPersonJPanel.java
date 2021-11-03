@@ -160,23 +160,46 @@ public class AddPersonJPanel extends javax.swing.JPanel {
 
     private void addjButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addjButtonActionPerformed
         // TODO add your handling code here:
+        if(isDataValid()){
         
-        Person person = new Person(namejTextField.getText(), Double.valueOf(agejTextField.getText()), 
-                Gender.valueOf((String)genderjComboBox.getSelectedItem()),null ,
-                new Date(), new Date(), "System", "System");
-        if(house.getPersons()==null){
-            house.setPersons(new ArrayList<>());
-            house.getPersons().add(person);
-        }else{
-            house.getPersons().add(person);
+            Person person = new Person(namejTextField.getText(), Double.valueOf(agejTextField.getText()), 
+                    Gender.valueOf((String)genderjComboBox.getSelectedItem()),null ,
+                    new Date(), new Date(), "System", "System");
+            if(house.getPersons()==null){
+                house.setPersons(new ArrayList<>());
+                house.getPersons().add(person);
+            }else{
+                house.getPersons().add(person);
+            }
+            system.getPersonDirectory().getPersons().add(person);
+            house.setLastUpdatedDate(new Date());
+            system.getPersonDirectory().setLastUpdatedDate(new Date());
+            JOptionPane.showMessageDialog(this, "Successfully added Person");
+            resetUi();
         }
-        system.getPersonDirectory().getPersons().add(person);
-        house.setLastUpdatedDate(new Date());
-        system.getPersonDirectory().setLastUpdatedDate(new Date());
-        JOptionPane.showMessageDialog(this, "Successfully added Person");
-        resetUi();
     }//GEN-LAST:event_addjButtonActionPerformed
 
+    private boolean isDataValid() {
+        
+        boolean valid = true;
+        if(!namejTextField.getText().matches("^[a-zA-Z ]+$")){
+            valid=false;
+            JOptionPane.showMessageDialog(this, "Please check Name dataType");
+        }
+        
+        try{
+            double age = Double.valueOf(agejTextField.getText());
+            if(age<0) {
+                valid =false;
+                JOptionPane.showMessageDialog(this, "Age cannot be negative");
+            }
+        }catch(Exception e) {
+            valid = false;
+            JOptionPane.showMessageDialog(this, "Please check Age dataType");
+        }
+        return valid;
+    }
+    
     private void resetUi() {
         
         namejTextField.setText("");
