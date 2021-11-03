@@ -226,29 +226,128 @@ public class VitalSignsAddJPanel extends javax.swing.JPanel {
     private void addJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addJButtonActionPerformed
         // TODO add your handling code here:
         
-        VitalSigns vitalSigns = new VitalSigns(Double.valueOf(weightJTextField.getText()), Double.valueOf(bloodPressureSysJTextField.getText()),
-        Double.valueOf(bloodPressureDsJTextField.getText()),        
-        Double.valueOf(heightJTextField.getText()), Double.valueOf(bodyTemperatureJTextField.getText()), Integer.valueOf(pulseRateJTextField.getText()),
-        Integer.valueOf(respirationRateJTextField.getText()), Double.valueOf(oxygenSaturationJTextField.getText()), new Date(),
-        new Date(), "System", "System");
+        if(isDataValid()){
+            VitalSigns vitalSigns = new VitalSigns(Double.valueOf(weightJTextField.getText()), Double.valueOf(bloodPressureSysJTextField.getText()),
+            Double.valueOf(bloodPressureDsJTextField.getText()),        
+            Double.valueOf(heightJTextField.getText()), Double.valueOf(bodyTemperatureJTextField.getText()), Integer.valueOf(pulseRateJTextField.getText()),
+            Integer.valueOf(respirationRateJTextField.getText()), Double.valueOf(oxygenSaturationJTextField.getText()), new Date(),
+            new Date(), "System", "System");
 
-        Encounter encounter = new Encounter(vitalSigns, new Date(), new Date(), "System", "System");
-        
-        if(person.getPatient()==null){
-            List<Encounter> encounters = new ArrayList<>();
-            encounters.add(encounter);
-            EncounterHistory encounterHistory = new EncounterHistory(encounters, new Date(), new Date(), "System", "System");
-            Patient patient = new Patient(encounterHistory, new Date(), new Date(), "System", "System");
-            person.setPatient(patient);
-        }else{
-            EncounterHistory encounterHistory = person.getPatient().getEncounterHistory();
-            encounterHistory.getEncounters().add(encounter);
+            Encounter encounter = new Encounter(vitalSigns, new Date(), new Date(), "System", "System");
+
+            if(person.getPatient()==null){
+                List<Encounter> encounters = new ArrayList<>();
+                encounters.add(encounter);
+                EncounterHistory encounterHistory = new EncounterHistory(encounters, new Date(), new Date(), "System", "System");
+                Patient patient = new Patient(encounterHistory, new Date(), new Date(), "System", "System");
+                person.setPatient(patient);
+            }else{
+                EncounterHistory encounterHistory = person.getPatient().getEncounterHistory();
+                encounterHistory.getEncounters().add(encounter);
+            }
+
+            JOptionPane.showMessageDialog(this, "Successfully Added the Vital Signs");
+            resetData();
         }
-        
-        JOptionPane.showMessageDialog(this, "Successfully Added the Vital Signs");
-        resetData();
     }//GEN-LAST:event_addJButtonActionPerformed
 
+    private boolean isDataValid() {
+        
+        boolean validData = true;
+        
+        try{
+            double weight = Double.valueOf(weightJTextField.getText());
+            if(weight <0) {
+                validData=false;
+                JOptionPane.showMessageDialog(this, "Weight cannot be negative");
+            }
+        }catch (Exception e){
+            JOptionPane.showMessageDialog(this, "Please check the dataType of Weight");
+            validData = false;
+        }
+        
+        try{
+            double bloodPressureSys = Double.valueOf(bloodPressureSysJTextField.getText());
+            if(bloodPressureSys <0) {
+                validData=false;
+                JOptionPane.showMessageDialog(this, "BloodPressureSys cannot be negative");
+            }
+        }catch (Exception e){
+            JOptionPane.showMessageDialog(this, "Please check the dataType of bloodPressureSys");
+            validData = false;
+        }
+        
+        try{
+            double bloodPressureDs = Double.valueOf(bloodPressureDsJTextField.getText());
+            if(bloodPressureDs <0) {
+                validData=false;
+                JOptionPane.showMessageDialog(this, "BloodPressureDs cannot be negative");
+            }
+        }catch (Exception e){
+            JOptionPane.showMessageDialog(this, "Please check the dataType of BloodPressureDs");
+            validData = false;
+        }
+
+        try{
+            double height = Double.valueOf(heightJTextField.getText());
+            if(height <0) {
+                validData=false;
+                JOptionPane.showMessageDialog(this, "Height cannot be negative");
+            }
+        }catch (Exception e){
+            JOptionPane.showMessageDialog(this, "Please check the dataType of Height");
+            validData = false;
+        }        
+        
+        try{
+            double bodyTemp = Double.valueOf(bodyTemperatureJTextField.getText());
+            if(bodyTemp <0) {
+                validData=false;
+                JOptionPane.showMessageDialog(this, "BodyTemperature cannot be negative");
+            }
+        }catch (Exception e){
+            JOptionPane.showMessageDialog(this, "Please check the dataType of BodyTemperature");
+            validData = false;
+        }
+
+        try{
+            double oxygenSat = Double.valueOf(oxygenSaturationJTextField.getText());
+            if(oxygenSat <0 || oxygenSat > 100) {
+                validData=false;
+                JOptionPane.showMessageDialog(this, "OxygenSaturation cannot be less than 0 or greater than 100");
+            }
+        }catch (Exception e){
+            JOptionPane.showMessageDialog(this, "Please check the dataType of OxygenSaturation");
+            validData = false;
+        }
+        
+        try{
+            int pulseRate = Integer.valueOf(pulseRateJTextField.getText());
+            if(pulseRate <0 ) {
+                validData=false;
+                JOptionPane.showMessageDialog(this, "PulseRate cannot be negative");
+            }
+        }catch (Exception e){
+            JOptionPane.showMessageDialog(this, "Please check the dataType of PulseRate");
+            validData = false;
+        }        
+
+        try{
+            int respiration = Integer.valueOf(respirationRateJTextField.getText());
+            if(respiration <0 ) {
+                validData=false;
+                JOptionPane.showMessageDialog(this, "Respiration cannot be negative");
+            }
+        }catch (Exception e){
+            JOptionPane.showMessageDialog(this, "Please check the dataType of Respiration");
+            validData = false;
+        }        
+        
+        
+        return validData;
+        
+    }
+    
     private void bodyTemperatureJTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bodyTemperatureJTextFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_bodyTemperatureJTextFieldActionPerformed
